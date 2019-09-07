@@ -1,0 +1,7 @@
+digital_climate_strike_widget.settings_form:
+  path: '/admin/config/system/digital-climate-strike-widget'
+  defaults:
+    _title: 'Digital Climate Strike widget settings'
+    _form: 'Drupal\digital_climate_strike_widget\Form\SettingsForm'
+  requirements:
+    _permission: 'administer digital_climate_strike_widget configuration'

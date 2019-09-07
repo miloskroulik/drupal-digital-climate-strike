@@ -1,0 +1,5 @@
+name: Digital Climate Strike widget
+type: module
+description: Allows site to participate in the Digital Climate Strike, planned on September 20, 2019
+package: Custom
+core: 8.x

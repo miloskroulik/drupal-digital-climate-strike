@@ -8,3 +8,7 @@
  * This file is no longer required in Drupal 8.
  * @see https://www.drupal.org/node/2217931
  */
+
+function digital_climate_strike_widget_preprocess_page(&$variables) {
+  $variables['#attached']['library'][] = 'digital_climate_strike_widget/digital_climate_strike_widget';
+}

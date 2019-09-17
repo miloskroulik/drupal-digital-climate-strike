@@ -10,5 +10,14 @@
  */
 
 function digital_climate_strike_widget_preprocess_page(&$variables) {
-  $variables['#attached']['library'][] = 'digital_climate_strike_widget/digital_climate_strike_widget';
+  $enabled = \Drupal::config('digital_climate_strike_widget.settings')
+      ->get('enable');
+  $default = \Drupal::config('system.theme')->get('default');
+  $active = \Drupal::service('theme.manager')
+    ->getActiveTheme()
+    ->getName();
+  // Attach only on the front page
+  if ($enabled && $default === $active) {
+    $variables['#attached']['library'][] = 'digital_climate_strike_widget/digital_climate_strike_widget';
+  }
 }

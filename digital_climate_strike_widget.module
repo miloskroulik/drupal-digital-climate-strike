@@ -10,8 +10,9 @@
  */
 
 function digital_climate_strike_widget_preprocess_page(&$variables) {
-  $enabled = \Drupal::config('digital_climate_strike_widget.settings')
-      ->get('enable');
+  $module_config = \Drupal::config('digital_climate_strike_widget.settings')
+    ->get();
+  $enabled = $module_config['enable'];
   $default = \Drupal::config('system.theme')->get('default');
   $active = \Drupal::service('theme.manager')
     ->getActiveTheme()
@@ -19,5 +20,6 @@ function digital_climate_strike_widget_preprocess_page(&$variables) {
   // Attach only on the front page
   if ($enabled && $default === $active) {
     $variables['#attached']['library'][] = 'digital_climate_strike_widget/digital_climate_strike_widget';
+    $variables['#attached']['drupalSettings']['digital_climate_strike_widget'] = $module_config;
   }
 }

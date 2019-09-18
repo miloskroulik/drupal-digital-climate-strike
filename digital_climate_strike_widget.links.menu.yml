@@ -1,0 +1,5 @@
+digital_climate_strike_widget.settings:
+  title: Digital CLimate Strike Widget
+  parent: system.admin_structure
+  description: 'Digital CLimate Strike Widget module settings.'
+  route_name: digital_climate_strike_widget.settings_form
